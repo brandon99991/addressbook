@@ -24,10 +24,11 @@ kind: Service
 metadata:
   name: project-k8s-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: project-k8s
   ports:
   - protocol: TCP
-    port: 80
+    port: 8080
+    nodePort: 30036    
     targetPort: 8080 
